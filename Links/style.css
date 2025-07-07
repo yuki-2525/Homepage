@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Profile Section */
+.profile {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 40px 20px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+.bio {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Links Section */
+.links {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-button {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.link-button:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.link-button .icon {
+    font-size: 20px;
+    margin-right: 15px;
+    min-width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-button .text {
+    font-size: 16px;
+    flex: 1;
+    text-align: left;
+}
+
+.link-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.link-button:hover::before {
+    left: 100%;
+}
+
+/* Special button styles */
+.link-button:nth-child(1) {
+    background: linear-gradient(135deg, #24292e 0%, #484848 100%);
+    color: white;
+    border-color: #24292e;
+}
+
+.link-button:nth-child(1):hover {
+    background: linear-gradient(135deg, #0d1117 0%, #24292e 100%);
+    border-color: #0d1117;
+}
+
+.link-button:nth-child(2) {
+    background: linear-gradient(135deg, #fc4a1a 0%, #f7931e 100%);
+    color: white;
+    border-color: #fc4a1a;
+}
+
+.link-button:nth-child(2):hover {
+    background: linear-gradient(135deg, #e33d0f 0%, #e8841a 100%);
+    border-color: #e33d0f;
+}
+
+.link-button:nth-child(3) {
+    background: linear-gradient(135deg, #1da1f2 0%, #0d8bd9 100%);
+    color: white;
+    border-color: #1da1f2;
+}
+
+.link-button:nth-child(3):hover {
+    background: linear-gradient(135deg, #0d8bd9 0%, #0a7bc4 100%);
+    border-color: #0d8bd9;
+}
+
+/* Footer */
+footer {
+    background: #f8f9fa;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        margin: 10px;
+        border-radius: 15px;
+    }
+    
+    .profile {
+        padding: 30px 15px;
+    }
+    
+    .avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    .profile h1 {
+        font-size: 1.5rem;
+    }
+    
+    .links {
+        padding: 20px 15px;
+    }
+    
+    .link-button {
+        padding: 15px 18px;
+    }
+    
+    .link-button .text {
+        font-size: 15px;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.link-button {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.link-button:nth-child(1) { animation-delay: 0.1s; }
+.link-button:nth-child(2) { animation-delay: 0.2s; }
+.link-button:nth-child(3) { animation-delay: 0.3s; }
+.link-button:nth-child(4) { animation-delay: 0.4s; }
+.link-button:nth-child(5) { animation-delay: 0.5s; }
+.link-button:nth-child(6) { animation-delay: 0.6s; }
